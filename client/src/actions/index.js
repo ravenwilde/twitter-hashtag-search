@@ -1,4 +1,5 @@
 import fetch from 'cross-fetch';
+import { isEmpty } from 'lodash';
 
 export const UPDATE_HASHTAG = 'UPDATE_HASHTAG';
 export const updateHashtag = hashtag => ({
@@ -40,5 +41,22 @@ export const fetchTweets = ( hashtag, count, result_type ) => {
 				dispatch(receiveTweets(json))
 			)
 	}
+}
+
+function shouldFetchTweets(state, hashtag, count, result_type) {
+  const tweets = state.tweets.items;
+  if (isEmpty(tweets)) {
+    return true
+  } else {
+    return false
+  }
+}
+
+export function fetchTweetsIfNeeded(hashtag, count, result_type) {
+	return (dispatch, getState) => {
+    if (shouldFetchTweets(getState(), hashtag, count, result_type)) {
+      return dispatch(fetchTweets(hashtag, count, result_type))
+    }
+  }
 }
 
