@@ -21,6 +21,8 @@ Generally, for security reasons, OAuth requests are not handled in the client, s
 
 ## To run locally...
 
+Place the seperately sent `.env` file within the `/server` directory.
+
 In your terminal, from the root of this project:
 
 ```

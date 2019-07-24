@@ -2,15 +2,16 @@ var express = require('express');
 var OAuth2 = require('OAuth').OAuth2;
 var fetch = require('node-fetch');
 var cors = require('cors')
-const Bluebird = require('bluebird');
+var Bluebird = require('bluebird');
+var dotenv = require('dotenv').config();
 
 fetch.Promise = Bluebird;
 
 var app = express();
 app.use(cors())
 
-var _twitterConsumerKey = "T5iG8R4TIWdXvkhv9IlbxPQia";
-var _twitterConsumerSecret = "MK1FmZxKuVU68cekU4YGbQFkp6w1N3X3SsyKTbY5f4N0EUxHNj";
+var _twitterConsumerKey = process.env.CONSUMER_KEY;
+var _twitterConsumerSecret = process.env.CONSUMER_SECRET;
 
 app.get('/search/:hashtag/:count/:type', function(req, res) {
   var hashtag = '#' + req.params.hashtag;
