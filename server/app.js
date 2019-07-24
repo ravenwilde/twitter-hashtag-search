@@ -40,7 +40,7 @@ app.get('/search/:hashtag/:count/:type', function(req, res) {
 
 
 app.get('*', function(req, res){
-    res.redirect('/get-token');
+    res.send({ text: "Hello There"});
 });
 
 app.listen(8080, function() {
