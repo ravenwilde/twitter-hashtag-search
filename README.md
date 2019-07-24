@@ -4,7 +4,7 @@ Generally, for security reasons, OAuth requests are not handled in the client, s
 
 ### Server:
 * `express` server
-* `0Auth package for authentication call
+* `0Auth` package for authentication call
 * `node-fetch` makes fetch happen
 * `cors` to solve CORS errors from localhost
 * `bluebird` Promise support for fetch
