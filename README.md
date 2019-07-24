@@ -1,6 +1,23 @@
 # Twitter Hashtag Search App
 
-I built this app in two parts so I could perform the Twitter API's authentication. Generally, for security reasons, OAuth requests are not handled in the client, so for this project I used Express.js to process the authentication and search query. 
+Generally, for security reasons, OAuth requests are not handled in the client, so this app is built in two parts so Twitter's API authentication can be properly handled.
+
+### Server:
+* `express` server
+* `0Auth package for authentication call
+* `node-fetch` makes fetch happen
+* `cors` to solve CORS errors from localhost
+* `bluebird` Promise support for fetch
+
+
+### Client:
+* bootstrapped with `create-react-app`
+* state managed with `redux`, `react-redux`
+* async actions made possible by `redux-thunk`
+* `cross-fetch` to insure fetch cross browser compatibility
+* `lodash` makes sorting painless
+* `babel-polyfill` because one of the other dependencies wouldn't party without it
+
 
 ## To run locally...
 
@@ -29,4 +46,4 @@ A browser window should spawn with the react app up and running. If it does not,
 * Once, the results are displayed in a table, the user should be able to sort the data that is in the table.
 * For this exercise, do not use any third party library to connect to the Twitter API.
 
-All Criteria are met, however, the popular vs. recent response sometimes does not vary. API Documentation suggests that popular results are highly dependent upon additional parameters that are not present in this iteration of the application. I would need more time to figure out how to refine my query.
+All Criteria are met, however, the popular vs. recent response sometimes does not vary depending upon the hashtag searched. API Documentation suggests that popular results are highly dependent upon additional parameters so my query could likely be refined to facilitate better results.
