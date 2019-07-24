@@ -41,6 +41,13 @@ class Table extends React.Component {
 
 	render(){
 		const { tweets } = this.state;
+		if (!tweets) {
+			return (
+				<div className="twelve columns">
+					<h2>Application could not load - Check Server.</h2>
+				</div>
+			);
+		}
 		return (
 			<div className="twelve columns">
 				{tweets.json ? 
