@@ -6,15 +6,15 @@ Generally, for security reasons, OAuth requests are not handled in the client, s
 * `express` server
 * `0Auth` package for authentication call
 * `node-fetch` makes fetch happen
-* `cors` to solve CORS errors from localhost
-* `bluebird` Promise support for fetch
+* `cors` to overcome CORS connection issues
+* `bluebird` Promises support for fetch
 
 
 ### Client:
-* bootstrapped with `create-react-app`
-* state managed with `redux`, `react-redux`
-* async actions made possible by `redux-thunk`
-* `cross-fetch` to insure fetch cross browser compatibility
+* `create-react-app` project bootstrap
+* `redux`, `react-redux` state management
+* `redux-thunk` handles async actions
+* `cross-fetch` insures fetch cross browser compatibility
 * `lodash` makes sorting painless
 * `babel-polyfill` because one of the other dependencies wouldn't party without it
 
